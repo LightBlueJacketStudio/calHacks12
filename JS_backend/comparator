@@ -35,12 +35,7 @@ async function comparator(forwardToken, messages) {
   };
 }
 
-// Example usage
-const result = await callAnthropic(process.env.LAVA_FORWARD_TOKEN, [
-  { role: 'user', content: 'Write a haiku about coding.' }
-]);
 
-console.log(result.data.content[0].text);
 
 
 // Export the functions
