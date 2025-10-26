@@ -35,15 +35,7 @@ async function extractInfo(forwardToken, messages) {
   };
 }
 
-// Example usage
-const result = await callOpenAI(process.env.LAVA_FORWARD_TOKEN, [
-  { role: 'system', content: 'You are a helpful assistant.' },
-  { role: 'user', content: 'Explain quantum computing in simple terms.' }
-]);
 
-console.log('Response:', result.data.choices[0].message.content);
-console.log('Usage:', result.usage);
-console.log('Request ID:', result.requestId);
 // Output:
 // Usage: { prompt_tokens: 23, completion_tokens: 133, total_tokens: 156 }
 
