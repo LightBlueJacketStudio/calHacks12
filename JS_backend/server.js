@@ -3,6 +3,9 @@ const express = require("express");
 const cors = require("cors");
 require("dotenv").config();
 
+const { extractInfo } = require("./extractor"); // ← import from extractor.js
+const { produceSolution } = require("./producer"); // ← import from producer.js
+
 // Initialize the app
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -31,3 +34,4 @@ app.post("/api/data", (req, res) => {
 app.listen(PORT, () => {
   console.log(`✅ Server started on http://localhost:${PORT}`);
 });
+
