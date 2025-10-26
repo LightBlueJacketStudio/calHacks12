@@ -1,6 +1,7 @@
-// this module produces the solution given the emergency information
-// will be using gemini as the producer model for now
-async function produceSolution(forwardToken, messagesa) {
+// this model compares the output of two models and dicides which is better
+// will be using claude as the comparator model for now
+
+async function comparator(forwardToken, messages) {
   const proxyUrl = 'https://api.lavapayments.com/v1/forward?u=' +
     encodeURIComponent('https://api.anthropic.com/v1/messages');
 
@@ -40,9 +41,7 @@ const result = await callAnthropic(process.env.LAVA_FORWARD_TOKEN, [
 ]);
 
 console.log(result.data.content[0].text);
-    
-
 
 
 // Export the functions
-module.exports = { produceSolution };
+module.exports = { comparator };
